@@ -3,43 +3,40 @@ description: |
     # Linear Algebra Recap
 
 rules:
-  access:
+    access:
     -
-      if_has_role: [student, ta, instructor]
-      permissions: [view]
+        if_has_role: [student, ta, instructor]
+        permissions: [view]
 
-  grading:
-    - grade_identifier: null
-
-groups:
- - id: intro
-   pages:
-
+    grading:
     -
-        type: Page
-        id: intro
-        content: |
+        grade_identifier: null
 
-            [JINJA]
+pages:
 
-            # A little distraction to start
+-
+    type: Page
+    id: intro
+    content: |
 
-            Yadda yadda.
+        # A little distraction to start
 
-            {% from "macros.jinja" import youtube %}
-            {{ youtube("QH2-TGUlwu4") }}
+        Yadda yadda.
 
-    -
-        type: Page
-        id: vectors
-        content: |
+        {% from "macros.jinja" import youtube %}
+        {{ youtube("QH2-TGUlwu4") }}
 
-            # Vectors
+-
+    type: Page
+    id: vectors
+    content: |
 
-            A vector is pretty straight.
+        # Vectors
+
+        A vector is pretty straight.
 
 completion_text: |
 
     # End of Linear Algebra Recap
 
-    Now you're ready to take the [quiz](flow:quiz-linalg).
+    Now you're ready to take the [quiz](flow:quiz-test).

@@ -4,46 +4,47 @@ description: |
     # RELATE Test Quiz
 
 rules:
-  start:
+    start:
     -
-      if_before: end_week 1
-      if_has_role: [student, ta, instructor]
-      if_has_fewer_sessions_than: 2
-      may_start_new_session: True
-      may_list_existing_sessions: True
-
-    -
-      may_start_new_session: False
-      may_list_existing_sessions: True
-
-  access:
-     -
-       if_before: end_week 2
-       permissions: [view, submit_answer, end_session, see_correctness]
-       message: "Welcome! This message is brought to you by the access rules."
-
-     -
-       permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
-
-  grading:
-    -
-      if_completed_before: end_week 1
-      grade_identifier: la_quiz
-      grade_aggregation_strategy: max_grade
-      credit_percent: 100
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
 
     -
-      if_completed_before: end_week 2
-      grade_identifier: la_quiz
-      grade_aggregation_strategy: max_grade
-      credit_percent: 50
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+         if_before: end_week 2
+         permissions: [view, submit_answer, end_session, see_correctness]
+         message: "Welcome! This message is brought to you by the access rules."
 
     -
-      grade_identifier: null
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grading:
+    -
+        if_completed_before: end_week 1
+        grade_identifier: la_quiz
+        grade_aggregation_strategy: use_latest
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        grade_identifier: la_quiz
+        grade_aggregation_strategy: use_latest
+        credit_percent: 50
+
+    -
+        grade_identifier: null
 
 groups:
- - id: intro
-   pages:
+-
+    id: intro
+    pages:
 
     -
         type: Page
@@ -54,9 +55,10 @@ groups:
 
             Don't be scared.
 
- - id: quiz
-   shuffle: True
-   pages:
+-
+    id: quiz_start
+    shuffle: True
+    pages:
 
     -
         type: TextQuestion
@@ -83,11 +85,34 @@ groups:
 
           # Neumann series
 
-            What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
+          What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
 
         answers:
 
           - <sym_expr>1/(1-A)
+
+    -
+        type: TextQuestion
+        id: half
+        value: 5
+        prompt: |
+
+          # A half
+
+          What's a half?
+
+        answers:
+
+          - type: float
+            value: 0.5
+            rtol: 1e-4
+          - <plain>half
+          - <plain>a half
+
+-
+    id: quiz_tail
+    shuffle: True
+    pages:
 
     -
         type: ChoiceQuestion
@@ -131,6 +156,47 @@ groups:
           - Tridiagonal form
 
     -
+        type: MultipleChoiceQuestion
+        id: ice_cream_toppings
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Ice Cream Toppings
+
+            Which of the following are ice cream toppings?
+
+        choices:
+
+          - ~CORRECT~ Sprinkles
+          - ~CORRECT~ Chocolate chunks
+          - Vacuum cleaner dust
+          - Spider webs
+          - ~CORRECT~ Almond bits
+
+    -
+        type: MultipleChoiceQuestion
+        id: matrix_props
+        value: 1
+        shuffle: True
+        allow_partial_credit: True
+        prompt: |
+
+            # Matrix properties
+
+            You know that the matrix $A$ satisfies $A=A^T$.
+
+            Which of the following is true about $A$?
+
+        choices:
+
+          - ~CORRECT~ $A$ has real eigenvalues.
+          - $A$ has eigenvalues with positive real part.
+          - $(x,y) = x^TAy$ is an inner product.
+          - ~CORRECT~ $A$ has orthogonal eigenvectors.
+          - $AA^T=I$
+
+    -
         type: PythonCodeQuestion
         id: addition
         access_rules:
@@ -150,6 +216,7 @@ groups:
 
             a = random.uniform(-10, 10)
             b = random.uniform(-10, 10)
+            1/0
 
         names_for_user: [a, b]
 
@@ -295,8 +362,6 @@ groups:
 
         prompt: |
 
-            [JINJA]
-
             # Submit an exam question
 
             Submit your practice exam question in the box below.
@@ -393,6 +458,61 @@ groups:
             - 71-80 years
             - 81-90 years
             - older
+
+    -
+        type: InlineMultiQuestion
+        id: excelbasictry3
+        value: 10
+        prompt: |
+
+            # An example
+
+            Complete the following paragraph.
+
+        question: |
+
+            Foo and [[blank1]] are often used in code examples, or
+            tutorials. The float weight of $\frac{1}{5}$ is [[blank_2]].
+
+            The correct answer for this choice question is [[choice_a]].
+            The Upper case of "foo" is [[choice2]]
+
+        answers:
+
+            blank1:
+                type: ShortAnswer
+                width: 6em
+                required: True
+                hint: Tex can be rendered in hint, e.g. $x_1$.
+                hint_title: Hint
+                correct_answer:
+                - <plain> BAR
+                - <plain>bar
+
+            blank_2:
+                type: ShortAnswer
+                width: 10em
+                hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
+                correct_answer:
+                - <plain> "1/5"
+                - type: float
+                  value: 1/5
+                  rtol: 0.00001
+                - <plain> 0.2
+
+            choice_a:
+                type: ChoicesAnswer
+                required: True
+                choices:
+                - ~CORRECT~ Correct
+                - Wrong
+
+            choice2:
+                type: ChoicesAnswer
+                choices:
+                - ~CORRECT~ FOO
+                - BAR
+                - fOO
 
     # {{{ Custom page type implemented within this repository
 
