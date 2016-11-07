@@ -1,7 +1,3 @@
-name: Sample Course
-number: CS123
-run: Fall 2014
-
 chunks:
 
 -
@@ -28,6 +24,9 @@ chunks:
         You can also jump directly to the [sample quiz](flow:quiz-test).
 
         Look at the amazing embedded [PDF](repocur:pdfs/sample.pdf).
+
+        In addition to interactive content, RELATE also supports [static (i.e.
+        non-interactive) pages](staticpage:test).
 
         Remember, this image shows the model that RELATE is trying to put out
         of business:

@@ -8,9 +8,7 @@ rules:
         if_has_role: [student, ta, instructor]
         permissions: [view]
 
-    grading:
-    -
-        grade_identifier: null
+    grade_identifier: null
 
 pages:
 
