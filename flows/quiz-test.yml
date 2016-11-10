@@ -466,8 +466,8 @@ groups:
             The correct answer for this choice question is [[choice_a]].
             The Upper case of "foo" is [[choice2]].
 
-            One dollar is [[blank3]], and five percent is [[blank4]], and "Bar"
-            wrapped by a pair of parentheses is [[blank5]].
+            One dollar is $[[blank3]], and five percent is [[blank4]]%, and "Bar"
+            wrapped by a pair of parentheses is ([[blank5]]).
 
         answers:
 
@@ -509,7 +509,6 @@ groups:
             blank3:
                 type: ShortAnswer
                 width: 3em
-                prepended_text: "$"
                 hint: Blank with prepended text
                 correct_answer:
                 - type: float
@@ -520,7 +519,6 @@ groups:
             blank4:
                 type: ShortAnswer
                 width: 3em
-                appended_text: "%"
                 hint: Blank with appended text
                 correct_answer:
                 - type: float
@@ -531,8 +529,6 @@ groups:
             blank5:
                 type: ShortAnswer
                 width: 6em
-                prepended_text: "("
-                appended_text: ")"
                 required: True
                 hint: Blank with both prepended and appended text
                 correct_answer:
