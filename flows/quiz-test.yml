@@ -50,7 +50,6 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        value: 2
         prompt: |
 
             # What's an eigenvector?
