@@ -50,7 +50,7 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        value: 2
+        value: 0
         prompt: |
 
             # What's an eigenvector?
@@ -67,7 +67,7 @@ groups:
     -
         type: TextQuestion
         id: neumann
-        value: 5
+        value: 0
         prompt: |
 
           # Neumann series
@@ -81,7 +81,7 @@ groups:
     -
         type: TextQuestion
         id: half
-        value: 5
+        value: 0
         prompt: |
 
           # A half
@@ -102,7 +102,7 @@ groups:
     -
         type: ChoiceQuestion
         id: lsq
-        value: 1
+        value: 0
         shuffle: True
         prompt: |
 
@@ -126,7 +126,7 @@ groups:
     -
         type: ChoiceQuestion
         id: krylov
-        value: 2
+        value: 0
         prompt: |
 
             # Krylov-space methods
@@ -144,7 +144,7 @@ groups:
         type: MultipleChoiceQuestion
         id: ice_cream_toppings
         credit_mode: exact
-        value: 1
+        value: 0
         shuffle: True
         prompt: |
 
@@ -163,7 +163,7 @@ groups:
     -
         type: MultipleChoiceQuestion
         id: matrix_props
-        value: 1
+        value: 0
         shuffle: True
         credit_mode: proportional
         prompt: |
@@ -188,7 +188,7 @@ groups:
         access_rules:
             add_permissions:
                 - change_answer
-        value: 1
+        value: 0
         timeout: 10
         prompt: |
 
@@ -229,8 +229,8 @@ groups:
         access_rules:
             add_permissions:
                 - change_answer
-        value: 3
-        human_feedback_value: 2
+        value: 0
+        human_feedback_percentage: 100
         timeout: 10
         data_files:
             - "question-data/random-data.npy"
@@ -291,7 +291,7 @@ groups:
         access_rules:
             add_permissions:
                 - change_answer
-        value: 5
+        value: 0
         maximum_megabytes: 0.5
         prompt: |
 
@@ -320,7 +320,7 @@ groups:
         access_rules:
             add_permissions:
                 - change_answer
-        value: 5
+        value: 0
         maximum_megabytes: 0.5
         prompt: |
 
@@ -339,7 +339,7 @@ groups:
     -
         type: HumanGradedTextQuestion
         id: hgtext
-        value: 5
+        value: 0
         widget: "editor:yaml"
         validators:
 
@@ -417,6 +417,7 @@ groups:
     -
         type: SurveyTextQuestion
         id: fear
+        value: 0
         widget: textarea
         prompt: |
 
@@ -427,6 +428,7 @@ groups:
     -
         type: SurveyChoiceQuestion
         id: age_group
+        value: 0
         prompt: |
 
             # Age
@@ -449,7 +451,7 @@ groups:
     -
         type: InlineMultiQuestion
         id: inlinemulti
-        value: 10
+        value: 0
         prompt: |
 
             # An InlineMultiQuestion example
@@ -537,6 +539,7 @@ groups:
     -
         type: PythonCodeQuestion
         id: test_audio_output
+        value: 0
         access_rules:
             add_permissions:
             -  change_answer
@@ -588,6 +591,7 @@ groups:
     -
         type: repo:simple_questions.MyTextQuestion
         id: eigval
+        value: 0
         # This title remains required because MyTextQuestion needs it.
         title: "Eigenvalues"
         prompt: |
