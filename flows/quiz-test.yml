@@ -50,7 +50,8 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        value: 0
+        requires_submission: False
+        value: 2
         prompt: |
 
             # What's an eigenvector?
@@ -67,7 +68,8 @@ groups:
     -
         type: TextQuestion
         id: neumann
-        value: 0
+        requires_submission: False
+        value: 5
         prompt: |
 
           # Neumann series
@@ -81,7 +83,8 @@ groups:
     -
         type: TextQuestion
         id: half
-        value: 0
+        requires_submission: False
+        value: 5
         prompt: |
 
           # A half
@@ -102,7 +105,8 @@ groups:
     -
         type: ChoiceQuestion
         id: lsq
-        value: 0
+        requires_submission: False
+        value: 1
         shuffle: True
         prompt: |
 
@@ -126,7 +130,8 @@ groups:
     -
         type: ChoiceQuestion
         id: krylov
-        value: 0
+        requires_submission: False
+        value: 2
         prompt: |
 
             # Krylov-space methods
@@ -142,9 +147,10 @@ groups:
 
     -
         type: MultipleChoiceQuestion
+        requires_submission: False
         id: ice_cream_toppings
         credit_mode: exact
-        value: 0
+        value: 1
         shuffle: True
         prompt: |
 
@@ -162,8 +168,9 @@ groups:
 
     -
         type: MultipleChoiceQuestion
+        requires_submission: False
         id: matrix_props
-        value: 0
+        value: 1
         shuffle: True
         credit_mode: proportional
         prompt: |
@@ -184,11 +191,12 @@ groups:
 
     -
         type: PythonCodeQuestion
+        requires_submission: False
         id: addition
         access_rules:
             add_permissions:
                 - change_answer
-        value: 0
+        value: 1
         timeout: 10
         prompt: |
 
@@ -225,12 +233,13 @@ groups:
 
     -
         type: PythonCodeQuestionWithHumanTextFeedback
+        requires_submission: False
         id: pymult
         access_rules:
             add_permissions:
                 - change_answer
-        value: 0
-        human_feedback_percentage: 100
+        value: 3
+        human_feedback_value: 2
         timeout: 10
         data_files:
             - "question-data/random-data.npy"
@@ -287,11 +296,12 @@ groups:
 
     -
         type: FileUploadQuestion
+        requires_submission: False
         id: proof
         access_rules:
             add_permissions:
                 - change_answer
-        value: 0
+        value: 5
         maximum_megabytes: 0.5
         prompt: |
 
@@ -316,11 +326,12 @@ groups:
 
     -
         type: FileUploadQuestion
+        requires_submission: False
         id: anyup
         access_rules:
             add_permissions:
                 - change_answer
-        value: 0
+        value: 5
         maximum_megabytes: 0.5
         prompt: |
 
@@ -338,8 +349,9 @@ groups:
 
     -
         type: HumanGradedTextQuestion
+        requires_submission: False
         id: hgtext
-        value: 0
+        value: 5
         widget: "editor:yaml"
         validators:
 
@@ -416,8 +428,8 @@ groups:
 
     -
         type: SurveyTextQuestion
+        requires_submission: False
         id: fear
-        value: 0
         widget: textarea
         prompt: |
 
@@ -427,8 +439,8 @@ groups:
 
     -
         type: SurveyChoiceQuestion
+        requires_submission: False
         id: age_group
-        value: 0
         prompt: |
 
             # Age
@@ -450,8 +462,9 @@ groups:
 
     -
         type: InlineMultiQuestion
+        requires_submission: False
         id: inlinemulti
-        value: 0
+        value: 10
         prompt: |
 
             # An InlineMultiQuestion example
@@ -538,8 +551,8 @@ groups:
 
     -
         type: PythonCodeQuestion
+        requires_submission: False
         id: test_audio_output
-        value: 0
         access_rules:
             add_permissions:
             -  change_answer
@@ -590,8 +603,8 @@ groups:
 
     -
         type: repo:simple_questions.MyTextQuestion
+        requires_submission: False
         id: eigval
-        value: 0
         # This title remains required because MyTextQuestion needs it.
         title: "Eigenvalues"
         prompt: |
