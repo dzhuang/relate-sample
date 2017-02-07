@@ -50,7 +50,7 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        is_exercise_page: true
+        is_optional_page: true
         value: 2
         prompt: |
 
@@ -68,7 +68,7 @@ groups:
     -
         type: TextQuestion
         id: neumann
-        is_exercise_page: true
+        is_optional_page: true
         value: 5
         prompt: |
 
@@ -83,7 +83,7 @@ groups:
     -
         type: TextQuestion
         id: half
-        is_exercise_page: true
+        is_optional_page: true
         value: 5
         prompt: |
 
@@ -105,7 +105,7 @@ groups:
     -
         type: ChoiceQuestion
         id: lsq
-        is_exercise_page: true
+        is_optional_page: true
         value: 1
         shuffle: True
         prompt: |
@@ -130,7 +130,7 @@ groups:
     -
         type: ChoiceQuestion
         id: krylov
-        is_exercise_page: true
+        is_optional_page: true
         value: 2
         prompt: |
 
@@ -147,7 +147,7 @@ groups:
 
     -
         type: MultipleChoiceQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: ice_cream_toppings
         credit_mode: exact
         value: 1
@@ -168,7 +168,7 @@ groups:
 
     -
         type: MultipleChoiceQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: matrix_props
         value: 1
         shuffle: True
@@ -191,7 +191,7 @@ groups:
 
     -
         type: PythonCodeQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: addition
         access_rules:
             add_permissions:
@@ -233,7 +233,7 @@ groups:
 
     -
         type: PythonCodeQuestionWithHumanTextFeedback
-        is_exercise_page: true
+        is_optional_page: true
         id: pymult
         access_rules:
             add_permissions:
@@ -296,7 +296,7 @@ groups:
 
     -
         type: FileUploadQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: proof
         access_rules:
             add_permissions:
@@ -326,7 +326,7 @@ groups:
 
     -
         type: FileUploadQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: anyup
         access_rules:
             add_permissions:
@@ -349,7 +349,7 @@ groups:
 
     -
         type: HumanGradedTextQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: hgtext
         value: 5
         widget: "editor:yaml"
@@ -428,7 +428,7 @@ groups:
 
     -
         type: SurveyTextQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: fear
         widget: textarea
         prompt: |
@@ -439,7 +439,7 @@ groups:
 
     -
         type: SurveyChoiceQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: age_group
         prompt: |
 
@@ -462,7 +462,7 @@ groups:
 
     -
         type: InlineMultiQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: inlinemulti
         value: 10
         prompt: |
@@ -551,7 +551,7 @@ groups:
 
     -
         type: PythonCodeQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: test_audio_output
         access_rules:
             add_permissions:
@@ -603,7 +603,7 @@ groups:
 
     -
         type: repo:simple_questions.MyTextQuestion
-        is_exercise_page: true
+        is_optional_page: true
         id: eigval
         # This title remains required because MyTextQuestion needs it.
         title: "Eigenvalues"
