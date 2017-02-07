@@ -8,7 +8,7 @@ rules:
     -
         if_before: end_week 1
         if_has_role: [student, ta, instructor]
-        if_has_fewer_sessions_than: 4
+        if_has_fewer_sessions_than: 100
         may_start_new_session: True
         may_list_existing_sessions: True
 
@@ -231,8 +231,8 @@ groups:
         access_rules:
             add_permissions:
                 - change_answer
-        value: 3
-        human_feedback_value: 2
+        value: 0
+        human_feedback_percentage: 100
         timeout: 10
         data_files:
             - "question-data/random-data.npy"
@@ -341,7 +341,7 @@ groups:
     -
         type: HumanGradedTextQuestion
         id: hgtext
-        value: 5
+        value: 0
         widget: "editor:yaml"
         validators:
 
