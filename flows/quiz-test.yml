@@ -50,8 +50,7 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        is_optional_page: true
-        value: 2
+        value: 0
         prompt: |
 
             # What's an eigenvector?
