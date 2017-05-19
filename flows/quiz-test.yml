@@ -580,6 +580,23 @@ groups:
 
             output_audio(signal)
 
+    -
+        type: HumanGradedTextQuestion
+        id: hmtx
+        title: "TestHuman"
+        value: 5
+
+        prompt: |
+
+             # Human graded
+
+             Input anything you like.
+
+        rubric: |
+
+            Anything is ok.
+
+
     # {{{ Custom page type implemented within this repository
 
     -
