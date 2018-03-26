@@ -35,11 +35,9 @@ answers:
         width: 10em
         hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
         correct_answer:
-        - <plain> "1/5"
         - type: float
           value: 1/5
           rtol: 0.00001
-        - <plain> 0.2
 
     choice_a:
         type: ChoicesAnswer
