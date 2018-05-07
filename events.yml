@@ -1,0 +1,39 @@
+event_kinds:
+    lecture:
+        title: Lecture {nr}
+
+    exam:
+        title: Exam {nr}
+        color: red
+
+    test:
+        title: bar
+
+
+events:
+    "lecture 1":
+        title: "Alternative title for lecture 1"
+        color: red
+        description: |
+            *Pre-lecture material:* [Linear algebra pre-quiz](flow:prequiz-linear-algebra) (not for credit)
+
+            * What is Scientific Computing?
+            * Python intro
+
+    "lecture 2":
+        show_description_from: lecture 6
+        show_description_until: lecture 10
+
+
+    "test":
+        show_description_from: lecture 6
+        show_description_until: lecture 10
+
+    "exam 1":
+        title: "Examination"
+        color: yellow
+        show_description_from: lecture 6
+        show_description_until: lecture 10
+
+        description: |
+            This is exam 1
